@@ -1,0 +1,21 @@
+{% extends base.html %}
+{% block content %}
+    <h1>Results for User ID {{ lookup }}</h1>
+    <table>
+    <tr>
+        <td>Wallet</td>
+        <td>Currency</td>
+        <td>Balance</td>
+        <td>Stamp</td>
+    </tr>
+    {% for e in resultlist %}
+        <tr>
+            <td>{{ e.wallet }}</td>
+            <td>{{ e.cur }}</td>
+            <td>{{ e.amount }}</td>
+            <td>{{ e.stamp }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+

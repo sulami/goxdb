@@ -1,0 +1,17 @@
+{% extends base.html %}
+{% block content %}
+    {% csrf_token %}
+    <form action="." method="POST">
+    <table>
+    <tr>
+        <td>User id:</td>
+        <td><input type="text" name="userid" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" /></td>
+    </tr>
+    </table>
+    </form>
+{% endblock %}
+
