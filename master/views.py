@@ -1,11 +1,13 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 from master.models import *
 
+@csrf_exempt
 def index(request):
     if request.method == 'POST':
-        resultlist = Balance.objects.get(acc=request.POST['userid']
+        resultlist = Balance.objects.filter(acc=request.POST['userid'])
         context = {'resultlist': resultlist}
-        render(request, 'master/result.html', context)
-    render(request, 'master/index.html')
+        return render(request, 'master/result.html', context)
+    return render(request, 'master/index.html')
 

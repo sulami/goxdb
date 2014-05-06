@@ -1,8 +1,6 @@
 from django.conf.urls import patterns, include, url
-from django.conf import settings
 
-from master import views
+urlpatterns = patterns('',
+    url(r'^$', 'master.views.index', name='index'),
+    )
 
-urlpatterns = patterns('master.views',
-    url(r'^$', 'index', name='index'),
-)
